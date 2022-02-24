@@ -10,8 +10,6 @@ type props = {
   onConfirm?: (value: string) => void,
   onCancel?: () => void,
   onChange?: (value: string, setValue: Dispatch<SetStateAction<string>>) => void,
-  // onKeypress?: () => void,
-  // onKeydown?: () => void,
   InputProps?: {
     palceholder?: string,
     defaultValue?: string
@@ -35,7 +33,7 @@ const Prompt: FC<props> = ({
   closeOnCancel = true
 }) => {
 
-  const { modal } = useActions()
+  const { modal$ } = useActions()
   const [ inputValue, setInputValue ] = useState<string>(InputProps?.defaultValue ?? '')
   const titles: string[] = useMemo(() => typeof title === 'string' ? [ title ] : title , [ title ])
   const texts: string[] = useMemo(
@@ -50,18 +48,18 @@ const Prompt: FC<props> = ({
       onConfirm(inputValue)
     }
     if(closeOnConfirm){
-      modal.hide()
+      modal$.hide()
     }
-  }, [ onConfirm, closeOnConfirm, modal, inputValue ])
+  }, [ onConfirm, closeOnConfirm, modal$, inputValue ])
 
   const handleCancel = useCallback(() => {
     if(onCancel){
       onCancel()
     }
     if(closeOnCancel){
-      modal.hide()
+      modal$.hide()
     }
-  }, [ onCancel, closeOnCancel, modal ])
+  }, [ onCancel, closeOnCancel, modal$ ])
 
   useEffect(() => {
     if(onChange){

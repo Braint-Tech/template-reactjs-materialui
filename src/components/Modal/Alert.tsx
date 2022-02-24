@@ -20,7 +20,7 @@ const Alert: FC<props> = ({
   closeOnConfirm = true
 }) => {
 
-  const { modal } = useActions()
+  const { modal$ } = useActions()
   const titles: string[] = useMemo(() => typeof title === 'string' ? [ title ] : title , [ title ])
   const texts: string[] = useMemo(() => {
     if(text){
@@ -34,9 +34,9 @@ const Alert: FC<props> = ({
       onConfirm()
     }
     if(closeOnConfirm){
-      modal.hide()
+      modal$.hide()
     }
-  }, [ onConfirm, closeOnConfirm, modal ])
+  }, [ onConfirm, closeOnConfirm, modal$ ])
 
   return (
     <ModalBase>

@@ -11,7 +11,7 @@ theme.components = {
   ...getOverrides(theme),
 }
 
-export const withTheme = (fn: (theme: Theme) => SxProps | React.CSSProperties) => fn(theme)
+export const withTheme = (fn: (theme: Theme) => SxProps) => fn(theme)
 
 export const updateThemeComponents = (t: Theme) => t.components = {
   ...getOverrides(t),

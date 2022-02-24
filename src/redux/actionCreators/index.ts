@@ -2,15 +2,16 @@ import { Dispatch } from 'redux'
 import { Action } from '../../types/actions'
 import user from './user'
 import modal from './modal'
+import notification from './notification'
 import { uncurryActionCreators } from '../../utils'
 
 const actions = {
-  user,
-  modal
+  user$: user,
+  modal$: modal,
+  notification$: notification
 }
 
 export default actions
-
 
 export const combineActions =
 <type, payload>(dispatch: Dispatch<Action<type, payload>>) =>

@@ -28,7 +28,7 @@ const Confirm: FC<props> = ({
   closeOnCancel = true
 }) => {
 
-  const { modal } = useActions()
+  const { modal$ } = useActions()
   const titles: string[] = useMemo(() => typeof title === 'string' ? [ title ] : title , [ title ])
   const texts: string[] = useMemo(
     () => 
@@ -43,9 +43,9 @@ const Confirm: FC<props> = ({
       if(onEither) onEither()
     }
     if(closeOnConfirm){
-      modal.hide()
+      modal$.hide()
     }
-  }, [ onConfirm, closeOnConfirm, modal, onEither ])
+  }, [ onConfirm, closeOnConfirm, modal$, onEither ])
 
   const handleCancel = useCallback(() => {
     if(onCancel){
@@ -53,9 +53,9 @@ const Confirm: FC<props> = ({
       if(onEither) onEither()
     }
     if(closeOnCancel){
-      modal.hide()
+      modal$.hide()
     }
-  }, [ onCancel, closeOnCancel, modal, onEither ])
+  }, [ onCancel, closeOnCancel, modal$, onEither ])
 
   return (
     <ModalBase>
