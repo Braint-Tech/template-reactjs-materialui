@@ -1,5 +1,5 @@
 import produce from 'immer'
-import { UserActions } from '../../types/actions/user'
+import UserActions from '../../types/actions/user'
 import { Store } from '../../types/store'
 
 const initialState: Store['user'] = {

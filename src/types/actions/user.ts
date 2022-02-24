@@ -10,4 +10,5 @@ export type LogoutUser = {
   payload: null
 }
 
-export type UserActions = LoginUser | LogoutUser
+type UserActions = LoginUser | LogoutUser
+export default UserActions
