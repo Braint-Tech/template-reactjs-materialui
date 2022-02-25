@@ -1,8 +1,8 @@
-import { Store } from '../store'
+import { User } from '../user'
 
 export type LoginUser = {
   type: 'LOGIN_USER',
-  payload: Store['user']
+  payload: User
 }
 
 export type LogoutUser = {

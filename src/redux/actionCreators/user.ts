@@ -1,10 +1,10 @@
 import { Dispatch } from 'redux'
 import { LoginUser, LogoutUser } from '../../types/actions/user'
-import { Store } from '../../types/store'
+import { User } from '../../types/user'
 
 const login =
 (dispatch: Dispatch<LoginUser>) =>
-(user: Store['user']) =>
+(user: User) =>
 dispatch({
   type: 'LOGIN_USER',
   payload: user

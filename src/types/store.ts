@@ -1,6 +1,8 @@
+import { User } from './user'
+
 export type Store = {
   user: {
-    id: number,
+    info?: User
   },
   modal: {
     open: boolean,
