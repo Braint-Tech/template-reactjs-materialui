@@ -1,6 +1,8 @@
 import { Theme, ThemeOptions } from "@mui/material"
-import { getButtonOverrides } from "./button"
+import { getButtonOverride } from "./button"
+import { getTypographyOverride } from './typography'
 
 export const getOverrides = (theme: Theme): ThemeOptions["components"] => ({
-  ...getButtonOverrides(theme)
+  ...getButtonOverride(theme),
+  ...getTypographyOverride(theme)
 })
