@@ -3,7 +3,7 @@ import { Box, IconButton, Typography } from '@mui/material'
 import { FC, useEffect, useMemo } from 'react'
 import { useActions } from '../../hooks/useActions'
 import { useStore } from '../../hooks/useStore'
-import { alertBoxContainer } from './NotificationStyles'
+import { alertBoxContainer } from './Notification.styles'
 
 type props = {
   text: string | string[]

@@ -1,7 +1,7 @@
 import { Button, Stack, TextField, Typography } from '@mui/material'
 import { Dispatch, FC, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 import { stackFlexRow } from 'tr-utils-la'
-import { useActions } from '../../hooks/useActions'
+import { useActions } from '../../hooks'
 import ModalBase from './Base'
 
 type props = {
